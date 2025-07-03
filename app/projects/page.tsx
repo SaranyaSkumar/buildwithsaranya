@@ -1,9 +1,13 @@
 "use client"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Header from "@/components/header"
 import ProjectCard from "@/components/project-card"
+
+import { useTheme } from "next-themes"
+
 
 // Move projects data outside component
 const projects = [
@@ -149,6 +153,8 @@ const projects = [
 ]
 
 export default function ProjectsPage() {
+  const { theme } = useTheme()
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
       <Header />
@@ -174,14 +180,34 @@ export default function ProjectsPage() {
                 My Projects
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-                A showcase of my work in full-stack development, from healthcare solutions to e-commerce platforms
+                A showcase of my work in full-stack development
               </p>
             </div>
           </div>
         </div>
 
+
+        { /* Coming Soon*/ }
+        <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              className={`text-center p-4 sm:p-6 rounded-2xl transition-all duration-300 ${
+                theme === "dark"
+                  ? "bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10"
+                  : "bg-white/80 backdrop-blur-xl border border-gray-200 hover:bg-white/90"
+              }`}
+            >
+              <div className={`text-xs sm:text-sm ${theme === "dark" ? "text-white/60" : "text-gray-500"}`}>
+                Coming Soon...
+              </div>
+            </motion.div>
+        
+
         {/* Projects Grid */}
-        <div className="py-8 sm:py-12 lg:py-16">
+        { /*<div className="py-8 sm:py-12 lg:py-16">
           <div className="container mx-auto">
             <div className="grid gap-6 sm:gap-8">
               {projects.map((project, index) => (
@@ -189,7 +215,7 @@ export default function ProjectsPage() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

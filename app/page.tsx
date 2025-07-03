@@ -349,7 +349,7 @@ export default function HomePage() {
                     <div className="flex items-center">
                       <Globe className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-cyan-400 flex-shrink-0" />
                       <span className={`text-sm sm:text-base ${theme === "dark" ? "text-white/80" : "text-gray-600"}`}>
-                        www.saranyadevspace.com
+                        www.saranyasasikumar.com
                       </span>
                     </div>
                   </CardContent>
@@ -363,7 +363,7 @@ export default function HomePage() {
         <SkillsShowcase />
 
         {/* Projects Preview */}
-        <section id="projects" className="py-12 sm:py-16 lg:py-20">
+        { /* <section id="projects" className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -436,10 +436,10 @@ export default function HomePage() {
               </Link>
             </motion.div>
           </div>
-        </section>
+        </section> */}
 
         {/* Blog Preview */}
-        <section id="blog" className="py-12 sm:py-16 lg:py-20">
+        {/* <section id="blog" className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -551,7 +551,7 @@ export default function HomePage() {
               </Link>
             </motion.div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 lg:py-20">

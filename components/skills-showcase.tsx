@@ -163,13 +163,13 @@ export default function SkillsShowcase() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+          className="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6"
         >
           {[
             { label: "Years Experience", value: "6+", icon: Cpu },
-            { label: "Projects Completed", value: "50+", icon: Code },
+            /* { label: "Projects Completed", value: "50+", icon: Code }, */
             { label: "Technologies", value: "20+", icon: Globe },
-            { label: "Happy Clients", value: "15+", icon: Zap },
+           /* { label: "Happy Clients", value: "15+", icon: Zap }, */
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
