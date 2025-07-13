@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { Moon, Sun, Menu, X, Github, Linkedin } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
 
@@ -89,6 +89,34 @@ export default function Header() {
             }`}
           >
             {theme === "dark" ? <Sun className="h-4 w-4 sm:h-5 sm:w-5" /> : <Moon className="h-4 w-4 sm:h-5 sm:w-5" />}
+          </Button>
+
+          {/* GitHub Link */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => window.open("https://github.com/SaranyaSkumar", "_blank")}
+            className={`transition-colors ${
+              theme === "dark"
+                ? "text-white/80 hover:text-white hover:bg-white/10"
+                : "text-gray-700 hover:text-gray-900 hover:bg-gray-100/50"
+            }`}
+          >
+            <Github className="h-4 w-4 sm:h-5 sm:w-5" />
+          </Button>
+
+          {/* LinkedIn Link */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => window.open("https://www.linkedin.com/in/saranya-s-kumar/", "_blank")}
+            className={`transition-colors ${
+              theme === "dark"
+                ? "text-white/80 hover:text-white hover:bg-white/10"
+                : "text-gray-700 hover:text-gray-900 hover:bg-gray-100/50"
+            }`}
+          >
+            <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
           </Button>
 
           {/* Mobile Menu Button */}
