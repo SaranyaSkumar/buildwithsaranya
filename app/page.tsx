@@ -3,24 +3,8 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-  Globe,
-  Code,
-  ChevronDown,
-  GraduationCap,
-  Star,
-  ArrowRight,
-  Download,
-  ExternalLink,
-} from "lucide-react"
-import Link from "next/link"
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Github, Linkedin, Mail, MapPin, Globe, Code, ChevronDown, GraduationCap, Star, Download } from "lucide-react"
 import { useTheme } from "next-themes"
 import SkillsShowcase from "@/components/skills-showcase"
 import AnimatedBackground from "@/components/animated-background"
@@ -198,17 +182,13 @@ export default function HomePage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}
-                className={`flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8 text-sm sm:text-base ${
+                className={`flex justify-center items-center text-sm sm:text-base ${
                   theme === "dark" ? "text-white/60" : "text-gray-500"
                 }`}
               >
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
                   Auckland, New Zealand
-                </div>
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-                  0224669982
                 </div>
               </motion.div>
             </motion.div>
@@ -362,197 +342,6 @@ export default function HomePage() {
         {/* Skills Section */}
         <SkillsShowcase />
 
-        {/* Projects Preview */}
-        { /* <section id="projects" className="py-12 sm:py-16 lg:py-20">
-          <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2
-                className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 ${
-                  theme === "dark" ? "text-white" : "text-gray-800"
-                }`}
-              >
-                Featured Projects
-              </h2>
-              <p className={`text-lg sm:text-xl ${theme === "dark" ? "text-white/70" : "text-gray-600"}`}>
-                Some highlights from my portfolio
-              </p>
-            </motion.div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-              {[
-                { title: "Healthcare Management System", tech: "Node.js, React, AWS" },
-                { title: "E-commerce Platform", tech: "Next.js, MongoDB, Stripe" },
-                { title: "Doctor Consultation Platform", tech: "Angular, PostgreSQL, WebRTC" },
-              ].map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  <MirrorCard className="group hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 overflow-hidden">
-                    <div className="h-32 sm:h-40 lg:h-48 bg-gradient-to-br from-cyan-500/20 to-purple-600/20 flex items-center justify-center">
-                      <Code className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-cyan-400 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <CardHeader className="p-4 sm:p-6">
-                      <CardTitle
-                        className={`group-hover:text-cyan-400 transition-colors text-lg sm:text-xl ${
-                          theme === "dark" ? "text-white" : "text-gray-800"
-                        }`}
-                      >
-                        {project.title}
-                      </CardTitle>
-                      <CardDescription
-                        className={`text-sm sm:text-base ${theme === "dark" ? "text-white/60" : "text-gray-500"}`}
-                      >
-                        {project.tech}
-                      </CardDescription>
-                    </CardHeader>
-                  </MirrorCard>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <Link href="/projects">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white border-0 shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
-                >
-                  View All Projects
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3" />
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
-        </section> */}
-
-        {/* Blog Preview */}
-        {/* <section id="blog" className="py-12 sm:py-16 lg:py-20">
-          <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2
-                className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 ${
-                  theme === "dark" ? "text-white" : "text-gray-800"
-                }`}
-              >
-                Latest from Blog
-              </h2>
-              <p className={`text-lg sm:text-xl ${theme === "dark" ? "text-white/70" : "text-gray-600"}`}>
-                Thoughts on technology and development
-              </p>
-            </motion.div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-              {[
-                {
-                  title: "Building Scalable Microservices with Node.js",
-                  date: "Dec 20, 2024",
-                  category: "Architecture",
-                  image: "/placeholder.svg?height=200&width=300",
-                  excerpt:
-                    "Learn how to architect and deploy microservices using modern containerization techniques and best practices for scalability.",
-                },
-                {
-                  title: "React Performance Optimization Techniques",
-                  date: "Dec 15, 2024",
-                  category: "Frontend",
-                  image: "/placeholder.svg?height=200&width=300",
-                  excerpt:
-                    "Discover advanced techniques to optimize React applications for better performance and user experience.",
-                },
-                {
-                  title: "AWS Cloud Architecture Best Practices",
-                  date: "Dec 10, 2024",
-                  category: "Cloud",
-                  image: "/placeholder.svg?height=200&width=300",
-                  excerpt: "A comprehensive guide to designing robust and cost-effective cloud architectures on AWS.",
-                },
-              ].map((post, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  <MirrorCard className="group hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 overflow-hidden">
-                    <div className="h-32 sm:h-40 lg:h-48 bg-gradient-to-br from-cyan-500/20 to-purple-600/20 flex items-center justify-center">
-                      <img
-                        src={post.image || "/placeholder.svg"}
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <CardHeader className="p-4 sm:p-6">
-                      <Badge className="w-fit mb-2 sm:mb-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white border-0 text-xs sm:text-sm">
-                        {post.category}
-                      </Badge>
-                      <CardTitle
-                        className={`group-hover:text-purple-400 transition-colors text-base sm:text-lg leading-tight mb-2 sm:mb-3 ${
-                          theme === "dark" ? "text-white" : "text-gray-800"
-                        }`}
-                      >
-                        {post.title}
-                      </CardTitle>
-                      <CardDescription
-                        className={`mb-2 sm:mb-3 text-sm sm:text-base ${
-                          theme === "dark" ? "text-white/60" : "text-gray-500"
-                        }`}
-                      >
-                        {post.excerpt}
-                      </CardDescription>
-                      <CardDescription
-                        className={`text-xs sm:text-sm ${theme === "dark" ? "text-white/60" : "text-gray-500"}`}
-                      >
-                        {post.date} • 5 min read
-                      </CardDescription>
-                    </CardHeader>
-                  </MirrorCard>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <Link href="/blog">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className={`px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg transition-all duration-300 ${
-                    theme === "dark"
-                      ? "border-white/30 text-white hover:bg-white/10 backdrop-blur-xl"
-                      : "border-gray-300 text-gray-700 hover:bg-gray-100 backdrop-blur-xl"
-                  }`}
-                >
-                  Read All Posts
-                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3" />
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
-        </section> */}
-
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto text-center">
@@ -573,7 +362,7 @@ export default function HomePage() {
                 Ready to bring your ideas to life? Let's discuss your next project.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-12">
+              <div className="flex justify-center mb-8 sm:mb-12">
                 <Button
                   size="lg"
                   onClick={handleEmailContact}
@@ -582,25 +371,13 @@ export default function HomePage() {
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
                   Send Email
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  onClick={() => (window.location.href = "tel:0224669982")}
-                  className={`px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg transition-all duration-300 ${
-                    theme === "dark"
-                      ? "border-white/30 text-white hover:bg-white/10 backdrop-blur-xl"
-                      : "border-gray-300 text-gray-700 hover:bg-gray-100 backdrop-blur-xl"
-                  }`}
-                >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-                  Call Me
-                </Button>
               </div>
 
               <div className="flex justify-center space-x-4 sm:space-x-8">
                 <Button
                   variant="ghost"
                   size="icon"
+                  onClick={() => window.open("https://github.com/SaranyaSkumar", "_blank")}
                   className={`hover:bg-white/10 ${
                     theme === "dark" ? "text-white/60 hover:text-white" : "text-gray-500 hover:text-gray-700"
                   }`}
@@ -610,20 +387,12 @@ export default function HomePage() {
                 <Button
                   variant="ghost"
                   size="icon"
+                  onClick={() => window.open("https://www.linkedin.com/in/saranya-s-kumar/", "_blank")}
                   className={`hover:bg-white/10 ${
                     theme === "dark" ? "text-white/60 hover:text-white" : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
                   <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className={`hover:bg-white/10 ${
-                    theme === "dark" ? "text-white/60 hover:text-white" : "text-gray-500 hover:text-gray-700"
-                  }`}
-                >
-                  <Globe className="w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
               </div>
             </motion.div>

@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Mail, Phone, MapPin, Send, Github, Linkedin, Globe } from "lucide-react"
+import { ArrowLeft, Mail, MapPin, Send, Github, Linkedin, Globe } from "lucide-react"
 import Link from "next/link"
 import Header from "@/components/header"
 import { useTheme } from "next-themes"
@@ -227,16 +227,6 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
-                        <Phone className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className={`font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>Phone</h3>
-                        <p className={theme === "dark" ? "text-white/70" : "text-gray-600"}>0224669982</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
                         <MapPin className="w-6 h-6 text-white" />
                       </div>
@@ -267,6 +257,7 @@ export default function ContactPage() {
                       <Button
                         variant="outline"
                         size="icon"
+                        onClick={() => window.open("https://github.com/SaranyaSkumar", "_blank")}
                         className={`${
                           theme === "dark"
                             ? "border-white/20 text-white hover:bg-white/10"
@@ -278,6 +269,7 @@ export default function ContactPage() {
                       <Button
                         variant="outline"
                         size="icon"
+                        onClick={() => window.open("https://www.linkedin.com/in/saranya-s-kumar/", "_blank")}
                         className={`${
                           theme === "dark"
                             ? "border-white/20 text-white hover:bg-white/10"
