@@ -86,3 +86,75 @@
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* Animation delay utilities */
+.animation-delay-75 {
+  animation-delay: 75ms;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+/* Gradio app styling */
+gradio-app {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Ensure iframe interactions work */
+iframe {
+  pointer-events: auto !important;
+  user-select: auto !important;
+}
+
+/* Custom scrollbar for better UX */
+gradio-app::-webkit-scrollbar,
+iframe::-webkit-scrollbar {
+  width: 6px;
+}
+
+gradio-app::-webkit-scrollbar-track,
+iframe::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+gradio-app::-webkit-scrollbar-thumb,
+iframe::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 3px;
+}
+
+gradio-app::-webkit-scrollbar-thumb:hover,
+iframe::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .fixed.bottom-6.right-6 {
+    bottom: 1rem;
+    right: 1rem;
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+  }
+}
+
+/* Ensure proper z-index stacking */
+.z-50 {
+  z-index: 50;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
+/* Fix for gradio app loading */
+gradio-app[src] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

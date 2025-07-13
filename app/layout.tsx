@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import GradioChatbot from "@/components/gradio-chatbot"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -10,7 +11,6 @@ export const metadata: Metadata = {
   title: "Saranya Sasi Kumar - Full-stack Developer",
   description:
     "Portfolio of Saranya Sasi Kumar, a passionate full-stack developer specializing in Node.js, React.js, and cloud technologies.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -23,6 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} storageKey="saranya-theme-preference">
           {children}
+          <GradioChatbot />
         </ThemeProvider>
       </body>
     </html>
