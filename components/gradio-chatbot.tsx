@@ -76,7 +76,7 @@ export default function GradioChatbot() {
                 </div>
                 <div>
                   <h3 className={`font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-                    Career Assistant
+                    Let's talk
                   </h3>
                   <p className={`text-sm ${theme === "dark" ? "text-white/60" : "text-gray-500"}`}>
                     Ask about my experience
