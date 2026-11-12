@@ -1,15 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import styles from "./experience.module.css";
 
 export const metadata: Metadata = {
   title: "Professional Experience",
-  description: "Explore Saranya Sasi Kumar's software engineering career since September 2018: cloud systems, production applications, AI-assisted tooling, healthcare software and backend engineering.",
+  description: "Explore Saranya Sasi Kumar's journey since September 2018, from healthcare software and real-time monitoring to AI agents, tools and workflows.",
   alternates: { canonical: "/experience" },
   openGraph: {
     title: "Professional Experience | Saranya Sasi Kumar",
     url: "/experience",
-    description: "Eight-plus years building reliable software across cloud engineering, full-stack applications and healthcare systems.",
+    description: "A personal look at eight-plus years of software engineering, from healthcare applications to building useful AI experiences.",
   },
 };
 
@@ -18,84 +17,62 @@ type Role = {
   title: string;
   company: string;
   location?: string;
-  summary: string;
-  highlights: string[];
-  areas: string[];
+  paragraphs: string[];
 };
 
 const roles: Role[] = [
   {
-    date: "MAR 2024 — PRESENT",
+    date: "MAR 2024 TO PRESENT",
     title: "Software Engineer",
     company: "Woods",
     location: "New Zealand",
-    summary: "Building and maintaining production software at the intersection of user-facing applications, cloud services and data-driven systems.",
-    highlights: [
-      "Develop responsive dashboards and interactive visualisations using React, Next.js and TypeScript.",
-      "Build backend services with Python and Node.js, supporting event-driven workflows across AWS.",
-      "Work with geospatial and IoT data pipelines for ingestion, processing and reporting.",
-      "Develop AI-assisted internal tools for document search, retrieval and summarisation, alongside access control and CI/CD improvements.",
+    paragraphs: [
+      "My journey at Woods started with GeoTrack, working with real-time monitoring data, GIS, maps and visualisations. It was interesting to see how data coming from the field could be turned into something people could actually understand and use.",
+      "These days, my world revolves more around AI, building agents, connecting tools, creating workflows and finding new ways to make everyday work easier. What I enjoy most is taking an idea and turning it into something useful, whether it's a small AI-powered application or a workflow that saves someone hours of effort. There's always something new to explore, and that's what makes it exciting.",
     ],
-    areas: ["Full-stack engineering", "AWS", "Event-driven systems", "Applied AI"],
   },
   {
-    date: "2022 — 2023",
+    date: "2022 TO 2023",
     title: "Fullstack Developer",
     company: "Tech Agrim",
     location: "India",
-    summary: "Designed full-stack services and cloud-backed workflows with an emphasis on security, performance and maintainable architecture.",
-    highlights: [
-      "Architected applications with Node.js and Next.js, backed by AWS RDS and S3 for application data and object storage.",
-      "Integrated AWS Cognito for user authentication and administrative workflows.",
-      "Implemented role-based access controls to protect data and support permission-aware user experiences.",
+    paragraphs: [
+      "Tech Agrim was where I started looking at applications more as a whole, rather than just individual features. I was working across frontend, backend and AWS, and I loved having that bigger picture. There was always something interesting to figure out, whether it was how services communicated, how permissions worked or how to make an application simpler for the people using it.",
     ],
-    areas: ["Node.js", "Next.js", "AWS", "Access control"],
   },
   {
     date: "2022 · CONTRACT",
     title: "Senior Web Developer",
     company: "DoctorOnCall",
-    summary: "Delivered backend capabilities for a healthcare platform, supporting customisation, access management and appointment scheduling.",
-    highlights: [
-      "Built backend modules for user customisation and role-based authentication.",
-      "Implemented appointment-booking workflows for users and administrators.",
-      "Led and coordinated a team through feature delivery and collaboration.",
+    paragraphs: [
+      "DoctorOnCall was a different kind of experience for me. Along with building features for a healthcare platform, I was also coordinating a team and helping things move forward. We worked on appointment booking, user management and backend functionality. It was interesting to see how something that looks simple to a user can have quite a lot happening behind the scenes.",
     ],
-    areas: ["Backend systems", "Authentication", "Scheduling", "Team leadership"],
   },
   {
-    date: "2020 — 2022",
+    date: "2020 TO 2022",
     title: "Software Engineer",
     company: "Turing Test",
-    summary: "Improved application performance, admin workflows and the security of established systems.",
-    highlights: [
-      "Optimised database interactions through Sequelize and Node.js integration.",
-      "Built specialised administrative modules, contributing to a reported 10% reduction in development time.",
-      "Refactored legacy code, contributing to a reported 60% decrease in security vulnerabilities.",
+    paragraphs: [
+      "I spent a good part of my time at Turing Test figuring out how to make existing things work better. There were performance issues to investigate, backend features to build and older code that needed attention. I actually enjoy this kind of work. Understanding why something behaves the way it does, finding the problem and making it better can be just as satisfying as building something from scratch.",
     ],
-    areas: ["Node.js", "Sequelize", "Performance", "Security"],
   },
   {
-    date: "2018 — 2020",
+    date: "2018 TO 2020",
     title: "Software Developer",
     company: "Vitalic Health Private Limited",
     location: "India",
-    summary: "Developed features and integrations for healthcare and doctor consultation applications.",
-    highlights: [
-      "Enhanced consultation workflows using Node.js and AngularJS.",
-      "Integrated Algolia Search and third-party APIs for scheduling, slot management and information retrieval.",
-      "Improved administration dashboards, contributing to a reported 15% reduction in operational time.",
+    paragraphs: [
+      "A lot of my early days as a developer were spent at Vitalic Health. I was building features for healthcare applications, working with APIs, search and consultation workflows, and learning how everything fitted together. There was plenty of figuring things out as I went, and I liked that. Every new feature or problem gave me something else to learn.",
     ],
-    areas: ["Node.js", "AngularJS", "Search", "Healthcare"],
   },
   {
     date: "2018",
     title: "Operations Analyst",
     company: "JustDoc",
     location: "India",
-    summary: "Supported healthcare operations, coordination and process improvements before moving into software development.",
-    highlights: [],
-    areas: ["Healthcare operations", "Process improvement"],
+    paragraphs: [
+      "My career actually started on the operations side of healthcare, at JustDoc. I wasn't writing software at that point, but I was seeing how things worked day to day and where processes could become complicated. It's an interesting place to have started, considering I eventually moved into building the kind of systems people rely on to get their work done.",
+    ],
   },
 ];
 
@@ -106,9 +83,8 @@ export default function ExperiencePage() {
         <Link href="/" className="back-link">← Back to home</Link>
         <p className="kicker">MY JOURNEY / EXPERIENCE</p>
         <h1>Built through<br/><em>experience.</em></h1>
-        <p>Since September 2018, I’ve worked across healthcare products, full-stack applications, cloud systems and AI-assisted tools. Each role has shaped how I approach building software for real people.</p>
+        <p>Since September 2018, I’ve worked across healthcare products, full-stack applications, cloud systems and AI tools. Every role has brought its own interesting challenges and things to learn.</p>
       </section>
-
       <section className="timeline" aria-label="Professional experience">
         {roles.map((role, index) => (
           <article className="timeline-entry" key={role.company}>
@@ -120,20 +96,11 @@ export default function ExperiencePage() {
               <div className="role-number">{String(index + 1).padStart(2, "0")} / EXPERIENCE</div>
               <h2>{role.title}</h2>
               <h3>{role.company}{role.location && <span> · {role.location}</span>}</h3>
-              <p>{role.summary}</p>
-              {role.highlights.length > 0 && (
-                <ul className={styles.highlights}>
-                  {role.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-                </ul>
-              )}
-              <div className={styles.tags} aria-label="Areas of work">
-                {role.areas.map((area) => <span className={styles.tag} key={area}>{area}</span>)}
-              </div>
+              {role.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </article>
         ))}
       </section>
-
       <section className="history-cta">
         <h2>What’s next?</h2>
         <p>Building on this foundation to create dependable, human-centred experiences with AI and modern software.</p>
