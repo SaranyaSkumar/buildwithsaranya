@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function SiteHeader(){return <header className="site-header"><Link className="wordmark" href="/">Saranya<span className="dot">.</span></Link><nav aria-label="Main navigation"><Link href="/#focus">Focus</Link><Link href="/#approach">Approach</Link><Link href="/experience">Experience</Link></nav><a className="nav-cta" href="mailto:connect.saranyasasikumar06@gmail.com">Let’s talk <span aria-hidden>↗</span></a></header>}

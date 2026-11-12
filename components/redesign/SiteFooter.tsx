@@ -1,0 +1,1 @@
+export default function SiteFooter(){return <footer className="footer"><span>© {new Date().getFullYear()} Saranya Sasi Kumar</span><span>Crafted with intention in Auckland, NZ.</span><a href="mailto:connect.saranyasasikumar06@gmail.com">Say hello ↗</a></footer>}

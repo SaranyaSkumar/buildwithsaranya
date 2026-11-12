@@ -1,44 +1,10 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
-import Link from "next/link"
-import Header from "@/components/header"
-import ExperienceContent from "@/components/experience-content"
-
-export default function ExperiencePage() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
-      <Header />
-      <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 2xl:px-48">
-        {/* Header */}
-        <div className="pt-20 pb-8">
-          <div className="container mx-auto">
-            <div className="flex items-center mb-6">
-              <Link href="/">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/10"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Home
-                </Button>
-              </Link>
-            </div>
-
-            <div className="text-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                Professional Journey
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-                My career progression in software development and the impact I've made
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <ExperienceContent />
-      </div>
-    </div>
-  )
-}
+import Link from "next/link";
+const jobs=[
+{date:"MAR 2024 — PRESENT",title:"Software Engineer",company:"Woods",location:"New Zealand",desc:"Developing and maintaining production software and cloud-based systems, with a focus on backend services, event-driven architecture and reliability."},
+{date:"2022 — 2023",title:"Fullstack Developer",company:"Tech Agrim",location:"",desc:"Built full-stack applications, backend integrations, access controls and business workflows."},
+{date:"2022 · CONTRACT",title:"Senior Web Developer",company:"DoctorOnCall",location:"",desc:"Worked on backend customisations, authentication and appointment-booking workflows."},
+{date:"2020 — 2022",title:"Software Engineer",company:"Turing Test",location:"",desc:"Contributed to backend modules, performance improvements and modernisation of existing software."},
+{date:"2018 — 2020",title:"Software Developer",company:"Vitalic Health Private Limited",location:"",desc:"Developed healthcare software and supporting integrations."},
+{date:"2018",title:"Operations Analyst",company:"JustDoc",location:"",desc:"Supported healthcare operations and process improvements."}
+];
+export default function ExperiencePage(){return <main className="experience-page"><section className="experience-heading"><Link href="/" className="back-link">← Back to home</Link><p className="kicker">MY JOURNEY / EXPERIENCE</p><h1>Built through<br/><em>experience.</em></h1><p>From healthcare applications and full-stack development to cloud engineering, each role has shaped how I solve problems and build software today.</p></section><section className="timeline" aria-label="Professional experience">{jobs.map((job,i)=><article className="timeline-entry" key={job.company}><div className="timeline-date"><span className="timeline-marker"/>{job.date}</div><div className="timeline-content"><div className="role-number">0{i+1} / EXPERIENCE</div><h2>{job.title}</h2><h3>{job.company}{job.location&&<span> · {job.location}</span>}</h3><p>{job.desc}</p></div></article>)}</section><section className="history-cta"><h2>What’s next?</h2><p>Building on this foundation to create dependable, human-centred experiences with AI and modern software.</p><Link className="button primary" href="/">Return to homepage ↗</Link></section></main>}
