@@ -1,7 +1,18 @@
 import Link from "next/link";
 const focus=[{num:"01",icon:"✳",title:"AI systems & agents",body:"Exploring practical agent workflows, retrieval-augmented generation and the systems that make AI useful beyond a demo."},{num:"02",icon:"◈",title:"Cloud & architecture",body:"Designing reliable, maintainable backends and event-driven services built for real production environments."},{num:"03",icon:"↗",title:"Thoughtful product engineering",body:"Bringing interfaces, APIs and infrastructure together around the needs of people using the product."}];
 const approach=[{num:"01",title:"Start with the problem",body:"Understand the context, constraints and outcome before choosing a framework or model."},{num:"02",title:"Build for the real world",body:"Keep reliability, cost, security and maintenance in the picture from the beginning."},{num:"03",title:"Stay curious",body:"Experiment, evaluate and keep what actually makes the experience better."}];
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Saranya Sasi Kumar",
+  url: "https://www.saranyasasikumar.com",
+  jobTitle: "Software Engineer",
+  worksFor: { "@type": "Organization", name: "Woods" },
+  address: { "@type": "PostalAddress", addressLocality: "Auckland", addressCountry: "NZ" },
+  knowsAbout: ["Full-stack development", "Backend engineering", "AWS cloud architecture", "Applied artificial intelligence", "AI agents", "Retrieval-augmented generation"],
+};
 export default function HomePage(){return <main>
+<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }} />
 <section className="hero" id="home"><div className="hero-copy"><div className="eyebrow"><span className="status-dot"/> SOFTWARE ENGINEER · AUCKLAND, NZ</div><h1>Engineering with <em>curiosity.</em></h1><p className="hero-intro">I’m Saranya — a software engineer with 8+ years of experience building full-stack and cloud-based applications, now bringing that foundation into the world of AI.</p><div className="actions"><a className="button primary" href="mailto:connect.saranyasasikumar06@gmail.com">Let’s connect <span>↗</span></a><Link className="button secondary" href="/experience">My experience <span>↗</span></Link></div><div className="micro">Thoughtful systems. Practical AI. Better experiences.</div></div><div className="portrait-scene"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="portrait-frame"><img src="/portfolio-hero.jpg" alt="Saranya smiling outdoors" className="portrait-photo" width="320" height="392" /></div><div className="small-sun" aria-hidden="true">✳</div><div className="portrait-label">A little technology,<br/>a lot of curiosity <span>✦</span></div></div></section>
 <div className="marquee"><span>BUILDING WHAT MATTERS</span><span>✳</span><span>KEEPING IT HUMAN</span><span>✳</span><span>ALWAYS LEARNING</span></div>
 <section id="focus" className="section"><div className="section-heading"><p className="kicker">01 / WHAT I FOCUS ON</p><h2>Where engineering<br/><em>meets possibility.</em></h2><p>Not a list of tools. A few areas I’m particularly interested in creating meaningful work around.</p></div><div className="focus-grid">{focus.map(x=><article className="focus-card" key={x.num}><div className="card-top"><span>{x.num} / FOCUS</span><span className="icon-bubble">{x.icon}</span></div><h3>{x.title}</h3><p>{x.body}</p></article>)}</div></section>
