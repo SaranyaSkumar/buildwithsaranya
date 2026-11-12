@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Professional Experience",
+  description: "Explore Saranya Sasi Kumar’s software engineering career since September 2018, including Woods, Tech Agrim, DoctorOnCall, Turing Test, Vitalic Health and JustDoc.",
+  alternates: { canonical: "/experience" },
+  openGraph: { title: "Professional Experience | Saranya Sasi Kumar", url: "/experience", description: "Career history spanning software development, backend architecture, full-stack applications and cloud engineering." },
+};
 const jobs=[
 {date:"MAR 2024 — PRESENT",title:"Software Engineer",company:"Woods",location:"New Zealand",desc:"Developing and maintaining production software and cloud-based systems, with a focus on backend services, event-driven architecture and reliability."},
 {date:"2022 — 2023",title:"Fullstack Developer",company:"Tech Agrim",location:"",desc:"Built full-stack applications, backend integrations, access controls and business workflows."},
