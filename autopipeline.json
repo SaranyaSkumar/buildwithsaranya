@@ -13,7 +13,8 @@
     "e2e": false,
     "dependencyAudit": true,
     "commands": {
-      "typecheck": "npx tsc --noEmit"
+      "typecheck": "npx tsc --noEmit",
+      "install": "npm ci --legacy-peer-deps"
     }
   },
   "deploy": {
