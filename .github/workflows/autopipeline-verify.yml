@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: SaranyaSkumar/autopipeline
-          ref: 90e26c1f9b203ce2a32744c88f66602120975d73
+          ref: 70169d0d2b1145e8351a6d14d32e61b8ccee7bef
           path: .autopipeline-tool
           persist-credentials: false
       - name: Set up Node
