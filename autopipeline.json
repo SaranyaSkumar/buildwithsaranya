@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "project": {
+    "language": "node",
+    "packageManager": "npm",
+    "runtime": "22"
+  },
+  "ci": {
+    "lint": true,
+    "typecheck": true,
+    "unit": false,
+    "build": true,
+    "e2e": false,
+    "dependencyAudit": true,
+    "commands": {
+      "typecheck": "npx tsc --noEmit"
+    }
+  },
+  "deploy": {
+    "enabled": false
+  }
+}
