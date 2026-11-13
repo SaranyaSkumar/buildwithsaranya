@@ -55,3 +55,12 @@
 .project-last-word>p:not(.kicker){max-width:590px;margin:0 auto 26px}
 .projects-home-link{display:inline-block;margin-top:26px;font-size:13px;color:#69856c;font-weight:700}
 @media(max-width:800px){.portfolio-project-card,.project-story,.project-command{grid-template-columns:1fr}.portfolio-project-art{min-height:260px}.project-feature-grid{grid-template-columns:1fr}.project-story,.project-command{gap:22px}.projects-intro,.project-detail-heading{padding:55px 24px}.projects-list{padding:0 24px 70px}.portfolio-project-copy{padding:30px}.project-detail-band{font-size:9px;letter-spacing:1px}.project-detail-heading .back-link{margin-bottom:48px}}
+
+
+.home-projects .section-heading{margin-bottom:32px}
+.home-project-feature{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:36px 40px;border:1px solid var(--line);border-radius:22px;background:#fff;transition:transform .25s,box-shadow .25s}
+.home-project-feature:hover{transform:translateY(-4px);box-shadow:0 16px 35px #29352b0b}
+.home-project-feature h3{font-family:'DM Serif Display',Georgia,serif;font-size:40px;font-weight:400;margin:18px 0 12px;letter-spacing:-1px}
+.home-project-feature p{font-size:14px;line-height:1.8;color:var(--muted);max-width:570px;margin:0 0 22px}
+.home-project-symbol{width:70px;height:70px;border-radius:50%;background:#e6eee4;color:#829884;display:grid;place-items:center;font-size:32px;flex-shrink:0}
+@media(max-width:600px){.home-project-feature{padding:26px}.home-project-symbol{width:42px;height:42px;font-size:22px}}
