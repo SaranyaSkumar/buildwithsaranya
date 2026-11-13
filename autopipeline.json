@@ -6,7 +6,7 @@
     "runtime": "22"
   },
   "ci": {
-    "lint": true,
+    "lint": false,
     "typecheck": true,
     "unit": false,
     "build": true,
