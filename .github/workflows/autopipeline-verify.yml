@@ -1,0 +1,29 @@
+name: Verify AutoPipeline generator
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout portfolio
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Checkout AutoPipeline source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: SaranyaSkumar/autopipeline
+          ref: 70169d0d2b1145e8351a6d14d32e61b8ccee7bef
+          path: .autopipeline-tool
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: Check AutoPipeline configuration
+        run: node .autopipeline-tool/bin/autopipeline.mjs doctor
+      - name: Check generated workflow has no drift
+        run: node .autopipeline-tool/bin/autopipeline.mjs check
