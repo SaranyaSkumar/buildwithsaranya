@@ -9,3 +9,58 @@
 .icon-bubble svg{width:32px;height:32px;display:block}
 
 @keyframes flowingFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-7px) rotate(3deg)}}
+
+
+/* AutoPipeline portfolio projects, using the existing cream, sage and peach design */
+.projects-intro,.project-detail-heading{padding:85px clamp(24px,12vw,180px) 68px}
+.projects-intro .back-link,.project-detail-heading .back-link{margin-bottom:64px}
+.projects-intro h1,.project-detail-heading h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(58px,8vw,108px);font-weight:400;letter-spacing:-2px;line-height:1.05;margin:22px 0 26px}
+.projects-intro h1 em,.project-detail-heading h1 em{color:var(--sage);font-weight:400}
+.projects-intro>p:last-child,.project-detail-heading>p:not(.kicker){font-size:16px;color:var(--muted);line-height:1.8;max-width:630px}
+.projects-list{padding:0 clamp(24px,12vw,180px) 115px}
+.portfolio-project-card{display:grid;grid-template-columns:42% 58%;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;transition:box-shadow .25s,transform .25s}
+.portfolio-project-card:hover,.portfolio-project-card:focus-visible{transform:translateY(-4px);box-shadow:0 16px 38px #29352b12;outline-color:var(--sage)}
+.portfolio-project-art{position:relative;min-height:360px;background:#e7eee5;color:#79917b;display:grid;place-items:center;padding:38px}
+.portfolio-project-art .art-corner,.portfolio-project-art .art-bottom{position:absolute;left:30px;font-size:10px;font-weight:700;letter-spacing:1.8px}
+.portfolio-project-art .art-corner{top:28px}.portfolio-project-art .art-bottom{bottom:28px}
+.pipeline-illustration{width:min(75%,240px);height:auto}
+.portfolio-project-copy{padding:45px clamp(25px,4vw,62px);display:flex;flex-direction:column;justify-content:center}
+.project-eyebrow,.project-feature>span{font-size:10px;letter-spacing:1.7px;font-weight:700;color:#8b9e8d}
+.portfolio-project-copy h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(37px,4vw,58px);font-weight:400;letter-spacing:-1px;margin:20px 0}
+.project-arrow{font-family:'DM Sans',sans-serif;font-size:21px;color:var(--sage);float:right;margin-top:11px}
+.portfolio-project-copy>p,.project-story p,.project-feature p,.project-command p,.project-last-word>p:not(.kicker){color:var(--muted);line-height:1.85;font-size:14px}
+.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 26px}
+.project-tags span{font-size:11px;padding:8px 12px;background:#f2f4ed;border:1px solid #e5e9e1;border-radius:30px;color:#738774}
+.project-open{font-size:13px;font-weight:700;color:#69856c}
+.project-open span{margin-left:8px}
+.project-detail-heading{padding-bottom:90px}
+.project-detail-heading .actions{margin-top:32px}
+.project-detail-band{display:flex;justify-content:center;align-items:center;gap:clamp(15px,4vw,75px);padding:22px;background:var(--sage-light);font-size:11px;letter-spacing:2px;font-weight:700;color:#6e8b72}
+.project-detail-band .band-dot{color:var(--peach)}
+.project-story{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.project-story h2,.project-features h2,.project-command h2,.project-last-word h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(43px,5vw,67px);font-weight:400;letter-spacing:-1.5px;line-height:1.1;margin:18px 0 25px}
+.project-story h2 em,.project-features h2 em,.project-command h2 em,.project-last-word h2 em{color:var(--sage);font-weight:400}
+.project-story p{font-size:15px}
+.project-features{background:#f1f3ed}
+.project-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:38px}
+.project-feature{background:white;border:1px solid var(--line);border-radius:20px;padding:32px}
+.project-feature h3{font-size:21px;font-weight:600;margin:28px 0 10px}
+.project-feature p{margin:0}
+.project-command{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
+.project-terminal{overflow:hidden;border-radius:17px;background:#2b3530;color:#d9e6d8;box-shadow:0 22px 45px #29352b20}
+.terminal-top{padding:17px 24px;border-bottom:1px solid #47554a;color:#b9c9b7;font-size:12px;display:flex;align-items:center;gap:22px}
+.terminal-dots{color:var(--peach);letter-spacing:5px}
+.project-terminal pre{padding:28px 24px;overflow:auto;line-height:2;font-size:14px}
+.project-last-word{text-align:center;padding:90px 24px 100px;background:var(--sage-light)}
+.project-last-word>p:not(.kicker){max-width:590px;margin:0 auto 26px}
+.projects-home-link{display:inline-block;margin-top:26px;font-size:13px;color:#69856c;font-weight:700}
+@media(max-width:800px){.portfolio-project-card,.project-story,.project-command{grid-template-columns:1fr}.portfolio-project-art{min-height:260px}.project-feature-grid{grid-template-columns:1fr}.project-story,.project-command{gap:22px}.projects-intro,.project-detail-heading{padding:55px 24px}.projects-list{padding:0 24px 70px}.portfolio-project-copy{padding:30px}.project-detail-band{font-size:9px;letter-spacing:1px}.project-detail-heading .back-link{margin-bottom:48px}}
+
+
+.home-projects .section-heading{margin-bottom:32px}
+.home-project-feature{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:36px 40px;border:1px solid var(--line);border-radius:22px;background:#fff;transition:transform .25s,box-shadow .25s}
+.home-project-feature:hover{transform:translateY(-4px);box-shadow:0 16px 35px #29352b0b}
+.home-project-feature h3{font-family:'DM Serif Display',Georgia,serif;font-size:40px;font-weight:400;margin:18px 0 12px;letter-spacing:-1px}
+.home-project-feature p{font-size:14px;line-height:1.8;color:var(--muted);max-width:570px;margin:0 0 22px}
+.home-project-symbol{width:70px;height:70px;border-radius:50%;background:#e6eee4;color:#829884;display:grid;place-items:center;font-size:32px;flex-shrink:0}
+@media(max-width:600px){.home-project-feature{padding:26px}.home-project-symbol{width:42px;height:42px;font-size:22px}}
