@@ -19,8 +19,6 @@ export default function Header() {
   const scrollToSection = (sectionId: string) => {
     if (sectionId === "experience") {
       window.location.href = "/experience"
-    } else if (sectionId === "projects") {
-      window.location.href = "/projects"
     } else if (sectionId === "blog") {
       window.location.href = "/blog"
     } else if (sectionId === "contact") {
@@ -61,7 +59,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex space-x-6 xl:space-x-8">
-          {["Home", "Experience", "Projects", "Blog", "Contact"].map((item) => (
+          {["Home", "Experience", "Blog", "Contact"].map((item) => (
             <Button
               key={item}
               variant="ghost"
@@ -147,7 +145,7 @@ export default function Header() {
             }`}
           >
             <div className="container mx-auto px-4 py-4 space-y-2">
-              {["Home", "Experience", "Projects", "Blog", "Contact"].map((item) => (
+              {["Home", "Experience", "Blog", "Contact"].map((item) => (
                 <Button
                   key={item}
                   variant="ghost"
