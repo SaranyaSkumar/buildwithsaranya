@@ -39,6 +39,27 @@ export default function ProjectsPage() {
           <span className="project-open">Explore project <span aria-hidden="true">↗</span></span>
         </div>
       </Link>
+      <Link className="portfolio-project-card" href="/projects/contextkit">
+        <div className="portfolio-project-art contextkit-art">
+          <span className="art-corner">02 / AI ENGINEERING</span>
+          <svg className="pipeline-illustration" viewBox="0 0 200 160" fill="none" aria-hidden="true">
+            <path d="M38 32L100 80L162 32M38 128L100 80L162 128" stroke="currentColor" strokeWidth="2.5" opacity=".65"/>
+            <path d="M38 32V128M162 32V128" stroke="currentColor" strokeWidth="2" opacity=".35" strokeDasharray="5 7"/>
+            <circle cx="38" cy="32" r="11" fill="#E8AD94"/><circle cx="38" cy="128" r="11" fill="#829884"/>
+            <circle cx="162" cy="32" r="11" fill="#829884"/><circle cx="162" cy="128" r="11" fill="#E8AD94"/>
+            <circle cx="100" cy="80" r="25" fill="#fff" stroke="#829884" strokeWidth="3"/>
+            <circle cx="100" cy="80" r="7" fill="#829884"/>
+          </svg>
+          <span className="art-bottom">RETRIEVE · RANK · EVALUATE</span>
+        </div>
+        <div className="portfolio-project-copy">
+          <span className="project-eyebrow">OPEN SOURCE · LIVE PLAYGROUND</span>
+          <h2>ContextKit<span className="project-arrow" aria-hidden="true">↗</span></h2>
+          <p>A lightweight TypeScript experiment in context engineering. Explore how agents rank evidence, compare keyword and real on-device embedding retrieval, and inspect the selected context.</p>
+          <div className="project-tags"><span>TypeScript</span><span>Context Engineering</span><span>Embeddings</span></div>
+          <span className="project-open">Try the live demo <span aria-hidden="true">↗</span></span>
+        </div>
+      </Link>
     </section>
   </main>;
 }
