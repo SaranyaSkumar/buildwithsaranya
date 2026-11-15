@@ -68,7 +68,7 @@ export default function ContextPlayground() {
         next=rank(query,budget,"keyword");
       } else {
         // Runs a real open-weight model in the visitor's browser. Model files download on first use.
-        const moduleUrl = "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2/+esm";
+        const moduleUrl = "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2";
         const { pipeline } = await import(/* webpackIgnore: true */ moduleUrl);
         const extractor=await pipeline("feature-extraction","Xenova/all-MiniLM-L6-v2",{ quantized:true });
         const vectors: number[][]=[];
