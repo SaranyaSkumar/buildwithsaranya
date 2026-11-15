@@ -1,64 +1,83 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import styles from "../project-refresh.module.css";
 
 export const metadata: Metadata = {
   title: "AutoPipeline | Projects",
-  description: "AutoPipeline is an experimental open-source GitHub Actions CI generator and drift checker.",
+  description: "A lightweight open-source CLI for generating and checking GitHub Actions workflows.",
   alternates: { canonical: "/projects/autopipeline" },
 };
 
-const capabilities = [
-  { number: "01", title: "Detect the stack", detail: "Recognises common Node.js, Python and Maven project files and suggests relevant checks." },
-  { number: "02", title: "Configure the checks", detail: "Choose linting, type checks, unit tests, builds and available dependency auditing options." },
-  { number: "03", title: "Generate the workflow", detail: "Produces reviewable GitHub Actions configuration with limited default permissions." },
-  { number: "04", title: "Keep it consistent", detail: "Checks for differences between project configuration and the generated workflow." },
+const steps = [
+  { name: "Detect", detail: "Find project tools" },
+  { name: "Configure", detail: "Choose CI checks" },
+  { name: "Generate", detail: "Write workflow YAML" },
+  { name: "Validate", detail: "Check for drift" },
 ];
 
 export default function AutoPipelinePage() {
-  return <main className="project-detail-page">
-    <section className="project-detail-heading">
-      <Link href="/projects" className="back-link">← Back to projects</Link>
-      <p className="kicker">OPEN SOURCE / DEVELOPER TOOL</p>
-      <h1>Less setup.<br/><em>More building.</em></h1>
-      <p>AutoPipeline is an experimental CLI for generating and maintaining configurable CI workflows, without repeating the same GitHub Actions setup for every project.</p>
-      <div className="actions">
-        <a href="https://github.com/SaranyaSkumar/autopipeline" className="button primary" target="_blank" rel="noopener noreferrer">Explore on GitHub <span aria-hidden="true">↗</span></a>
-        <a href="https://github.com/SaranyaSkumar/autopipeline#readme" className="button secondary" target="_blank" rel="noopener noreferrer">Read the documentation <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-    <div className="project-detail-band"><span>CONFIGURE</span><span className="band-dot">✦</span><span>GENERATE</span><span className="band-dot">✦</span><span>VALIDATE</span></div>
-    <section className="project-story section">
-      <div><p className="kicker">01 / THE IDEA</p><h2>One workflow,<br/><em>less repetition.</em></h2></div>
-      <div>
-        <p>Setting up a new repository often means repeating familiar CI tasks. AutoPipeline explores a more consistent way to detect project tools, select useful checks and generate a workflow that developers can inspect and commit.</p>
-        <p>It uses GitHub Actions to run the jobs rather than replacing the underlying CI provider.</p>
-      </div>
-    </section>
-    <section className="project-features section">
-      <p className="kicker">02 / WHAT IT DOES</p>
-      <h2>Small steps.<br/><em>Better workflows.</em></h2>
-      <div className="project-feature-grid">
-        {capabilities.map(item => <article key={item.number} className="project-feature">
-          <span>{item.number} / CAPABILITY</span><h3>{item.title}</h3><p>{item.detail}</p>
-        </article>)}
-      </div>
-    </section>
-    <section className="project-command section">
-      <div>
-        <p className="kicker">03 / DEVELOPER EXPERIENCE</p>
-        <h2>Start from<br/><em>your terminal.</em></h2>
-        <p>The project includes a CLI with commands for initialising configuration, generating workflows and checking for drift. Follow the repository README for up-to-date installation instructions.</p>
-      </div>
-      <div className="project-terminal">
-        <div className="terminal-top"><span className="terminal-dots">● ● ●</span> AutoPipeline CLI</div>
-        <pre><code>{"$ autopipeline init\n$ autopipeline doctor\n$ autopipeline generate\n$ autopipeline check"}</code></pre>
-      </div>
-    </section>
-    <section className="project-last-word">
-      <p className="kicker">CURRENT STATUS / EXPERIMENTAL</p>
-      <h2>Built openly.<br/><em>Improved thoughtfully.</em></h2>
-      <p>AutoPipeline is an early-stage project. Advanced security checks and deployment integrations are planned, not part of the current release.</p>
-      <a href="https://github.com/SaranyaSkumar/autopipeline" className="button primary" target="_blank" rel="noopener noreferrer">View the source code ↗</a>
-    </section>
+  return <main className={styles.page}>
+    <div className={styles.wrap}>
+      <Link href="/projects" className={styles.back}>← Back to projects</Link>
+      <section className={styles.hero}>
+        <div>
+          <p className={styles.eyebrow}>OPEN SOURCE / DEVELOPER TOOL</p>
+          <h1>AutoPipeline<span className={styles.dot}>.</span></h1>
+          <p className={styles.subtitle}>Reusable GitHub Actions workflows, without repeating the setup.</p>
+          <div className={styles.actions}>
+            <a className={styles.primary} href="https://github.com/SaranyaSkumar/autopipeline" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a className={styles.secondary} href="https://github.com/SaranyaSkumar/autopipeline#readme" target="_blank" rel="noopener noreferrer">Documentation ↗</a>
+          </div>
+          <div className={styles.tags}><span>CLI</span><span>GitHub Actions</span><span>Open source</span></div>
+        </div>
+        <div className={styles.pipelineVisual} aria-label="AutoPipeline flow from project to GitHub Actions">
+          <div className={styles.pipelineNode}>Project</div>
+          <span aria-hidden="true">→</span>
+          <div className={styles.pipelineCenter}>AutoPipeline</div>
+          <span aria-hidden="true">→</span>
+          <div className={styles.pipelineNode}>CI workflow</div>
+        </div>
+      </section>
+
+      <section className={styles.compactSection}>
+        <div className={styles.sectionTitle}><h2>What it does</h2><p>Four steps, one repeatable workflow.</p></div>
+        <div className={styles.stepGrid}>
+          {steps.map((step, index) => <div className={styles.step} key={step.name}>
+            <span className={styles.stepNumber}>0{index + 1}</span>
+            <strong>{step.name}</strong><small>{step.detail}</small>
+          </div>)}
+        </div>
+      </section>
+
+      <section className={styles.splitSection}>
+        <div>
+          <h2>From the terminal</h2>
+          <p className={styles.caption}>Inspect, generate and check your workflow.</p>
+          <div className={styles.terminal}>
+            <div className={styles.terminalBar}><i/><i/><i/><span>CLI</span></div>
+            <pre><code>{`$ autopipeline init
+$ autopipeline doctor
+$ autopipeline generate
+$ autopipeline check`}</code></pre>
+          </div>
+        </div>
+        <div>
+          <h2>Generated workflow</h2>
+          <p className={styles.caption}>Review the resulting GitHub Actions file before committing.</p>
+          <div className={styles.codePreview}>
+            <span>.github/workflows/ci.yml</span>
+            <pre><code>{`name: CI
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Generated checks go here`}</code></pre>
+          </div>
+        </div>
+      </section>
+      <div className={styles.note}><span className={styles.noteMark}>↗</span><p><strong>Experimental open source.</strong> See the README for supported stacks, current capabilities and installation instructions.</p><a href="https://github.com/SaranyaSkumar/autopipeline" target="_blank" rel="noopener noreferrer">Explore repository →</a></div>
+    </div>
   </main>;
 }
