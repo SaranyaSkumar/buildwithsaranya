@@ -1,0 +1,62 @@
+.page{background:var(--cream);color:var(--ink);min-height:100vh;padding:0 0 90px}
+.wrap{max-width:1180px;margin:0 auto;padding:42px clamp(22px,5vw,64px) 0}
+.back{display:inline-block;margin-bottom:47px;color:var(--muted);font-size:13px}
+.back:hover{color:var(--sage)}
+.eyebrow{font-size:10px;letter-spacing:2px;font-weight:700;color:var(--sage);margin:0 0 18px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:0 0 72px;border-bottom:1px solid var(--line)}
+.contextHero{display:flex;align-items:end;justify-content:space-between;gap:36px;padding:0 0 50px;border-bottom:1px solid var(--line)}
+.hero h1,.contextHero h1{font:400 clamp(54px,6.6vw,86px)/1.1 'DM Serif Display',Georgia,serif;letter-spacing:-2px;margin:0 0 17px}
+.dot{color:var(--sage)}
+.subtitle{font-size:clamp(15px,1.6vw,19px);line-height:1.65;color:var(--muted);margin:0;max-width:510px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}
+.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap}
+.primary{background:#829884;color:white}.primary:hover{background:#617e67}
+.secondary{border:1px solid #cfd8ce}.secondary:hover{background:white}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}
+.tags span{padding:7px 12px;border:1px solid var(--line);border-radius:30px;font-size:11px;color:var(--muted)}
+.pipelineVisual{display:flex;align-items:center;justify-content:center;gap:12px;min-height:240px;border-radius:24px;background:linear-gradient(145deg,#f0f4ed,#e3ebdf);padding:24px;color:#5c7b62;font-size:13px}
+.pipelineVisual>span{font-size:20px;color:#8aa28c}
+.pipelineNode,.pipelineCenter{padding:15px 14px;background:var(--cream);border:1px solid #d8e3d7;border-radius:14px;text-align:center}
+.pipelineCenter{background:#829884;color:white;font-weight:700;border-color:#829884}
+.compactSection{padding-top:51px}
+.sectionTitle{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:22px}
+.sectionTitle h2,.splitSection h2{font:400 30px/1.2 'DM Serif Display',Georgia,serif;letter-spacing:-.5px;margin:0}
+.sectionTitle p,.caption{font-size:13px;color:var(--muted);margin:0}
+.stepGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.step{min-height:126px;border:1px solid var(--line);border-radius:17px;background:#fff;padding:19px;display:flex;flex-direction:column;gap:8px}
+.stepNumber{font-size:11px;font-weight:700;color:var(--sage)}
+.step strong{font-size:15px}.step small{font-size:12px;color:var(--muted)}
+.splitSection{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:55px}
+.caption{margin:10px 0 16px;line-height:1.5}
+.terminal,.codePreview{border-radius:16px;overflow:hidden;min-height:225px}
+.terminal{background:#29352d;color:#e5eee4}
+.terminalBar{display:flex;align-items:center;gap:6px;padding:15px 20px;border-bottom:1px solid #435248;color:#b9c7ba;font-size:12px}
+.terminalBar i{width:9px;height:9px;display:inline-block;background:#e8ad94;border-radius:50%}
+.terminalBar i:nth-child(2){background:#e1c878}.terminalBar i:nth-child(3){background:#9ab89d}
+.terminalBar span{margin-left:12px}
+.terminal pre,.codePreview pre{font-size:13px;line-height:1.8;padding:18px 20px;overflow-x:auto;margin:0}
+.codePreview{border:1px solid var(--line);background:#f3f6f1}
+.codePreview>span{display:block;border-bottom:1px solid #dce5db;padding:16px 20px;font:12px monospace;color:#5c7b62}
+.note{border-top:1px solid var(--line);padding:30px 0;margin-top:56px;display:flex;align-items:center;gap:16px}
+.noteMark{display:grid;place-items:center;height:35px;width:35px;flex-shrink:0;border-radius:11px;background:var(--sage-light);color:#617e67}
+.note p{flex:1;margin:0;color:var(--muted);font-size:12px;line-height:1.6}.note strong{color:var(--ink)}
+.note a{font-size:12px;font-weight:700;color:#617e67;white-space:nowrap}
+.runnerSection{padding-top:40px}
+.flow{display:flex;align-items:center;gap:10px}
+.flow>div{flex:1;border:1px solid var(--line);border-radius:15px;background:#fff;padding:17px;min-height:85px}
+.flow strong,.flow small{display:block}.flow strong{font-size:14px}.flow small{font-size:11px;color:var(--muted);margin-top:8px}
+.flow>span{color:var(--sage)}
+.disclaimer{font-size:12px;line-height:1.7;color:var(--muted);margin-top:18px}
+/* Compact the existing runner without changing retrieval behaviour. */
+.runnerSection :global(.contextkit-demo){grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px}
+.runnerSection :global(.contextkit-form),.runnerSection :global(.contextkit-results){border-radius:17px}
+.runnerSection :global(.contextkit-head){padding:14px 17px}
+.runnerSection :global(.contextkit-controls){padding:17px}
+.runnerSection :global(.contextkit-options){margin-top:17px}
+.runnerSection :global(.contextkit-run){margin-top:18px}
+.runnerSection :global(.contextkit-ranked){max-height:390px;padding:0 14px}
+.runnerSection :global(.contextkit-ranked article){padding:11px 13px}
+.runnerSection :global(.contextkit-stats){padding:14px}
+.runnerSection :global(.contextkit-footnote){font-size:10px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:28px}.contextHero{align-items:start;flex-direction:column;gap:0}.pipelineVisual{min-height:160px}.stepGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.splitSection{grid-template-columns:1fr}.runnerSection :global(.contextkit-demo){grid-template-columns:1fr}}
+@media(max-width:600px){.wrap{padding-top:23px}.back{margin-bottom:32px}.hero{padding-bottom:35px}.contextHero{padding-bottom:30px}.hero h1,.contextHero h1{font-size:50px;overflow-wrap:anywhere}.pipelineVisual{font-size:11px;gap:6px;padding:14px}.pipelineNode,.pipelineCenter{padding:10px 8px}.sectionTitle{display:block}.sectionTitle p{margin-top:8px}.compactSection{padding-top:36px}.step{min-height:106px;padding:15px}.splitSection{margin-top:40px}.note{flex-wrap:wrap}.note a{margin-left:51px}.flow{display:grid;grid-template-columns:1fr 1fr}.flow>span{display:none}.flow>div{min-height:75px}.runnerSection :global(.contextkit-stats){grid-template-columns:repeat(2,1fr)}}
