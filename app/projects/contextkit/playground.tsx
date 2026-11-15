@@ -56,6 +56,9 @@ export default function ContextPlayground() {
   const [error,setError]=useState("");
   const [duration,setDuration]=useState<number|null>(null);
   const [modelReady,setModelReady]=useState(false);
+  const [lastEvaluatedQuery,setLastEvaluatedQuery]=useState(examples[0].query);
+  const [lastEvaluatedBudget,setLastEvaluatedBudget]=useState(120);
+  const [lastEvaluatedMode,setLastEvaluatedMode]=useState<"keyword"|"semantic">("keyword");
   const selected=useMemo(()=>results.filter(x=>x.selected),[results]);
   const expected=examples[example]?.expected;
   async function run() {
@@ -80,12 +83,17 @@ export default function ContextPlayground() {
         setModelReady(true);
       }
       setResults(next);
+      setLastEvaluatedQuery(query);
+      setLastEvaluatedBudget(budget);
+      setLastEvaluatedMode(mode);
       setDuration(Math.round(performance.now()-start));
     } catch(e) {
       setError("Could not load the local embedding model. Check your browser connection or try keyword mode. "+(e instanceof Error ? e.message:""));
     } finally {setRunning(false);}
   }
-  function selectExample(i:number) {setExample(i);setQuery(examples[i].query);setResults(rank(examples[i].query,budget,"keyword"));setMode("keyword");setDuration(null);setError("");}
+  function selectExample(i:number) {setExample(i);setQuery(examples[i].query);setResults(rank(examples[i].query,budget,"keyword"));setMode("keyword");setLastEvaluatedQuery(examples[i].query);setLastEvaluatedBudget(budget);setLastEvaluatedMode("keyword");setDuration(null);setError("");}
+  const isStale = query !== lastEvaluatedQuery || budget !== lastEvaluatedBudget || mode !== lastEvaluatedMode;
+  const isPresetQuery = examples[example]?.query === lastEvaluatedQuery;
   const hit=selected.slice(0,3).some(x=>x.id===expected);
   return <div className="contextkit-demo">
     <div className="contextkit-form">
@@ -108,10 +116,10 @@ export default function ContextPlayground() {
       <div className="contextkit-stats">
         <div><strong>{selected.length}</strong><small>Selected</small></div>
         <div><strong>{selected.reduce((sum,x)=>sum+x.tokens,0)}</strong><small>Approx. tokens</small></div>
-        <div><strong>{hit?"YES":"NO"}</strong><small>Sample hit@3</small></div>
+        <div><strong>{isStale||!isPresetQuery?"—":hit?"YES":"NO"}</strong><small>Sample hit@3</small></div>
         <div><strong>{duration===null?"—":duration+"ms"}</strong><small>Runtime</small></div>
       </div>
-      <p className="contextkit-results-label">Ranked evidence <span>Selected items marked in sage</span></p>
+      <p className="contextkit-results-label">Ranked evidence <span>{isStale?"Inputs changed — run retrieval to update":"Selected items marked in sage"}</span></p>
       <div className="contextkit-ranked">{results.map((d,i)=><article className={d.selected?"selected":""} key={d.id}><div className="contextkit-rank"><span>#{i+1} · {d.id}</span><span>{(d.score*100).toFixed(1)}% similarity</span></div><h3>{d.title}</h3><p>{d.text}</p><div className="contextkit-meta"><span>{d.source}</span><span>{d.tokens} tokens · {d.selected?"Included":d.score<=0?"Not relevant":"Over budget"}</span></div></article>)}</div>
       <p className="contextkit-footnote">Sample hit@3 compares against one hand-labelled source for the selected preset. If you edit the query, this label is no longer a rigorous accuracy measure. Token estimates use four characters per token. The live playground is a small educational counterpart to the ContextKit repository, not a hosted execution of arbitrary GitHub code.</p>
     </div>
