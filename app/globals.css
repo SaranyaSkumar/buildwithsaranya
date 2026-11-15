@@ -54,3 +54,44 @@
 .project-last-word{text-align:center;padding:90px 24px 100px;background:var(--sage-light)}
 .project-last-word>p:not(.kicker){max-width:590px;margin:0 auto 26px}
 @media(max-width:800px){.portfolio-project-card,.project-story,.project-command{grid-template-columns:1fr}.portfolio-project-art{min-height:260px}.project-feature-grid{grid-template-columns:1fr}.project-story,.project-command{gap:22px}.projects-intro,.project-detail-heading{padding:55px 24px}.projects-list{padding:0 24px 70px}.portfolio-project-copy{padding:30px}.project-detail-band{font-size:9px;letter-spacing:1px}.project-detail-heading .back-link{margin-bottom:48px}}
+
+
+/* ContextKit portfolio project and interactive browser runner */
+.projects-list{display:grid;gap:24px}
+.contextkit-art{background:#eaf0e8}
+.contextkit-section{padding-top:90px}
+.contextkit-lede{color:var(--muted);line-height:1.8;max-width:690px;margin-bottom:32px}
+.contextkit-demo{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:18px;align-items:start}
+.contextkit-form,.contextkit-results{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;min-width:0}
+.contextkit-head{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:18px 23px;border-bottom:1px solid var(--line);font-weight:700;font-size:10px;letter-spacing:1.4px;color:#728575}
+.contextkit-status{letter-spacing:0;color:#729676}
+.contextkit-controls{padding:23px}
+.contextkit-controls label{display:block;font-weight:700;font-size:12px;margin-bottom:9px}
+.contextkit-controls textarea{width:100%;border:1px solid #dbe2d9;background:#fbfcfa;color:var(--ink);border-radius:12px;padding:13px;font:inherit;font-size:14px;resize:vertical}
+.contextkit-controls textarea:focus,.contextkit-options select:focus{outline:2px solid var(--sage);outline-offset:2px}
+.contextkit-presets{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.contextkit-presets button{border:1px solid #dde5dc;border-radius:30px;padding:8px 11px;background:#f5f8f3;color:#617665;font-size:11px;cursor:pointer}
+.contextkit-presets button.active{background:#e0eae0;border-color:#9bad9d;color:#3e6848}
+.contextkit-options{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:26px}
+.contextkit-options select{font:inherit;font-size:13px;padding:11px;width:100%;border:1px solid #dbe2d9;border-radius:10px;background:#fbfcfa;color:var(--ink)}
+.contextkit-options input[type=range]{display:block;width:100%;accent-color:#829884;margin-top:13px}
+.contextkit-run{display:block;width:100%;background:#829884;color:#fff;border:0;border-radius:999px;padding:14px;margin-top:24px;font-weight:700;cursor:pointer;font:inherit;font-size:13px}
+.contextkit-run:hover{background:#617e67}
+.contextkit-run:disabled{opacity:.65;cursor:wait}
+.contextkit-footnote{color:#78857c;font-size:11px;line-height:1.75;margin:18px 0 0}
+.contextkit-error{color:#ac443d;background:#fff1ef;padding:11px;border-radius:10px;font-size:12px}
+.contextkit-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:20px}
+.contextkit-stats>div{background:#f3f6f1;border-radius:11px;padding:15px 9px}
+.contextkit-stats strong{display:block;font-size:19px;color:#526e59}
+.contextkit-stats small{display:block;font-size:10px;color:#75877a;margin-top:4px}
+.contextkit-results-label{display:flex;justify-content:space-between;gap:10px;padding:0 21px;color:#384b3d;font-size:12px;font-weight:700}
+.contextkit-results-label span{font-size:10px;font-weight:400;color:#859489}
+.contextkit-ranked{padding:0 20px;display:grid;gap:10px;max-height:545px;overflow:auto}
+.contextkit-ranked article{border:1px solid #e8ece6;padding:15px;border-radius:14px;background:#fff}
+.contextkit-ranked article.selected{background:#f1f6ef;border-color:#c9dac9}
+.contextkit-rank,.contextkit-meta{display:flex;justify-content:space-between;gap:7px;color:#788d7b;font-size:10px}
+.contextkit-ranked h3{font-size:14px;margin:11px 0 6px}
+.contextkit-ranked p{font-size:12px;line-height:1.6;color:#67776a;margin:0 0 12px}
+.contextkit-results>.contextkit-footnote{margin:15px 20px 23px}
+@media(max-width:1050px){.contextkit-demo{grid-template-columns:1fr}}
+@media(max-width:600px){.contextkit-options{grid-template-columns:1fr}.contextkit-stats{grid-template-columns:repeat(2,1fr)}.contextkit-head{flex-wrap:wrap}.contextkit-results-label{flex-wrap:wrap}}
